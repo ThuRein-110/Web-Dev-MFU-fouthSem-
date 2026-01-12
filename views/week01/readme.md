@@ -1,9 +1,8 @@
 
 Summerize result of the week01 code
 ```markdown
-![Alt text](./ass1.jpg)
-![Alt text](./ass2.jpg)
-![Alt text](./ass3.jpg)
-
+![Assignment Image 1](./ass1.jpg)
+![Assignment Image 2](./ass2.jpg)
+![Assignment Image 3](./ass3.jpg)
 
 ```

@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="/public/css/style.css">
 <body>
-    <a href="index.html">Home</a> |
-<a href="login.html">Login</a>
+    <div id="navbar">
+        <a href="index.html">Home</a> |
+        <a href="login.html">Login</a>
+    </div>
 
 <h1>Login</h1>
 
 <form>
-Username <input type="text"><br><br>
-Password <input type="password"><br><br>
-<input type="submit" value="Login">
+    <div>
+        Username <input class="form-control" type="text">
+    </div>
+    <div>
+        Password <input class="form-control" type="password">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Login">
 </form>
 
 <p>Not a member? <a href="register.html">register</a></p>

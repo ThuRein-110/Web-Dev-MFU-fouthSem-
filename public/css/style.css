@@ -1,0 +1,32 @@
+#navbar{
+    color : red;
+    background-color: lightgray;
+}
+.input{
+    background-color: aquamarine;
+    display : block;
+    /*margin : top right bottom left;*/
+    margin : 0 0 4px 0;
+}
+.input-btn{
+    background-color: coral;
+    display : block;
+    /*margin : top right bottom left;*/
+    margin : 8px 0 4px 0;
+}
+.input:hover{
+    background-color: yellow;
+}
+.input-btn:hover{
+    background-color: rgb(255, 196, 0);
+}
+.login-box{
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightblue;
+    
+
+}

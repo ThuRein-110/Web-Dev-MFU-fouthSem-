@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>Hello World</P>
+    <p id ="id">0</p>
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+    <button onclick="reset()">reset</button>
+
+    
+<script>
+    let count = 0;
+    function update(){
+            document.getElementById("id").innerHTML=count;
+
+    }
+    function increase(){count++;update();}function decrease(){count--;update();}function reset(){count=0;update();}
+/* 
+
+function calculate(){
+let price = 100;
+let isMember = document.getElementById("input1").value;
+let discountPr = price * 0.1;
+let discount = isMember?discountPr:price;
+
+document.getElementById("id").innerHTML = "The final price is " + discount;
+
+}
+*/
+
+
+
+ /*let link;
+ if(Math.random() < 3){
+    link = "<a href='https://www.google.com'>Google</a>";
+ } else{
+    link = "<a href='https://www.bing.com'>Bing</a>";
+ }
+ document.getElementById("id").innerHTML = link;
+ */
+</script>
+</body>
+
+</html>

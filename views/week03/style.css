@@ -1,0 +1,43 @@
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #2f4858;
+  color: white;
+}
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.Blog {
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    padding-left: 2rem;
+    overflow-y: scroll;
+    font-size: 1.2em;
+    height: 7in; 
+    border: 1px solid #ccc;
+    overflow: 7in; 
+    padding: 5px;
+}
+.scroll-section{
+    background-color: rgb(209, 208, 208);
+    border-radius: 3rem;
+    text-align: left;
+    padding: 3rem;
+    margin-right:2rem;
+    margin-left: 2rem;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.sidebar{
+    background-color: lightgray;
+    width: 20%;
+    height: auto;
+    padding-left: 2rem;
+}

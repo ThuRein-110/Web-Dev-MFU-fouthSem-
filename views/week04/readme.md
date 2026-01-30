@@ -1,5 +1,4 @@
 <h3 align="center">🧪 Week 04 Code Results</h3>
 
-<p align="center">
-  <img src="/views/week04/week4.jpg" width="280"/>
-</p>
+<img src="/views/week04/week4.jpg" width="280"/>
+

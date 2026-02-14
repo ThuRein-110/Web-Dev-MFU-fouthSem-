@@ -26,6 +26,7 @@ function login() {
     icon: "success",
     title: "Login Successful",
     text: `Welcome ${user.username}`,
-    confirmButtonText: "OK"
+    confirmButtonText: "OK",
+    
   });
 }

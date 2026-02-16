@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MFU Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>MFU Shop</h2>
+        <button class="logout-btn">Logout</button>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <div class="header">
+            <h2>Welcome Peter</h2>
+            <button class="add-btn" onclick="openModal()">Add</button>
+        </div>
+
+        <div class="products" id="productList"></div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <input type="text" id="productName" placeholder="Product name...">
+        <input type="number" id="productPrice" placeholder="Price...">
+        <input type="file" id="productImage" accept="image/*">
+
+        <img id="previewImage" class="preview" />
+
+        <div class="modal-buttons">
+            <button class="save-btn" onclick="saveProduct()">Save</button>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

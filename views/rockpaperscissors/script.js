@@ -3,7 +3,6 @@ const choices = ["rock", "paper", "scissors"];
 const resultText = document.getElementById("result-text");
 const playBtn = document.getElementById("click");
 const choiceElements = document.querySelectorAll(".choice");
-
 function getChosenEle(){
     const chose = Math.floor(Math.random() * choices.length);
     return choices[chose];
@@ -57,3 +56,5 @@ playBtn.addEventListener("click", () => {
     playTime(playerChoice, computerChoice);
     showResult(playerChoice, computerChoice);
 });
+
+

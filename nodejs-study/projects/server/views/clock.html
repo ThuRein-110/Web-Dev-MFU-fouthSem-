@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #clock {
+        font-size: 2em;
+        color: #333;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        background-color: rgb(60, 103, 103);
+    }
+    button:hover {
+        background-color: rgb(60, 103, 103);
+        color: white;
+    }
+</style>
+<body>
+    <h1>Clock</h1>
+    <h2>Current Time: </h2>
+    <h3>header 3 : </h3>
+    <p id="clock"></p>
+    <button onclick="fetchCurrentTime()">Fetch Current Time</button>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');  
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    
+    async function fetchCurrentTime() {
+        try{
+            const response = await fetch('/now');
+            //fetch('http://localhost:3000/now')same with the above line, because the default port is 3000
+
+            if (response.status === 200){
+                //alert('Current time fetched successfully!');
+
+                const datetime = await response.text();
+                document.querySelector('h2').textContent = `${datetime.toLocaleString()}`;
+            } else {
+                alert('Failed to fetch current time. Status: ' + response.status);
+            }
+
+            if(!response.ok){
+                throw new Error('Network response was not ok');
+            }
+            // const datetimesec = await response.text();
+            // document.querySelector('h3').textContent = `${datetimesec.toLocaleString()}`;
+        }catch(error){
+            alert('Error fetching current time: ' + error.message);
+        }
+    }
+
+    fetchCurrentTime();
+    </script>
+</body>
+</html>

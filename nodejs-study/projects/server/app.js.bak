@@ -1,23 +1,11 @@
 const express = require('express');
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 const port = 3000;
 const path = require('path');
 const users = [{ username: 'admin', password: 'admin123' }];
 //app.listen(3000,function(){console.log("Server is running on port 3000")});
 // In-memory users (demo only)
-// duplicate declaration commented out to avoid errors
-// const users = [{ username: 'admin', password: 'admin123' }];
-
-// Mount auth routes (defined in auth.js)
-try {
-  const auth = require('./auth')(users);
-  app.use(auth);
-} catch (err) {
-  // auth.js not present or failed to load — leaving app functional
-  console.log('auth module not loaded:', err.message);
-}
+const users = [{ username: 'admin', password: 'admin123' }];
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
@@ -71,4 +59,3 @@ app.get('/login/:username/:password', function(req, res) {
 
 //to run manual ly: node app.js
 //to run automatically: node --watch app.js
-

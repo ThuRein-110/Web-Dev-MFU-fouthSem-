@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@3.4.0"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+    input {
+        padding: 10px;
+        font-size: 1em;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        background-color: rgb(60, 103, 103);
+        color: white;
+        border: none;
+    }
+    button:hover {
+        background-color: rgb(60, 103, 103);
+        color: white;
+    }
+</style>
+<body>
+    <main class="flex items-center align-center">
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </main>
+
+    <script>
+            
+    async function login(username, password) {
+        try{
+            const response = await fetch('/login/${username}/${password}');
+            if(!response.ok){
+                const message = await response.text();
+                throw Error(message);
+                }
+                const message = await response.text();
+                alert(message);
+        }catch(error){
+            alert('Error fetching current time: ' + error.message);
+        }
+    }
+
+
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (response.ok) {
+                    alert('Login successful!');
+                } else {
+                    alert('Login failed. Please check your credentials.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            }
+        });
+       
+        
+    </script>
+</body>
+</html>
